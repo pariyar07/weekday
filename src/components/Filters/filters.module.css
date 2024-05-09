@@ -1,0 +1,36 @@
+.filters_container {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 100vw;
+  padding: 24px;
+  flex-wrap: wrap;
+}
+
+.main_filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 120px;
+}
+.filter_label {
+  margin: 0;
+  font-size: 14px;
+}
+
+.text_input:focus-within {
+  box-shadow: 0 0 0 3px #bbdefb;
+  border-radius: 8px;
+}
+
+/* Firefox */
+.text_input:focus-visible {
+  outline: 0;
+}
+
+.select_input,
+.text_input {
+  font-size: 14px;
+  font-weight: 300;
+  color: #333333;
+}
