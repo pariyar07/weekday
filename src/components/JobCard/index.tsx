@@ -4,7 +4,8 @@ import CustomButton from '../ui/CustomButton';
 import { AVATAR_EXAMPLE_ARRAY } from '../../constants';
 import AboutUs from './AboutUs';
 
-const JobCard = () => {
+const JobCard = ({ job }: { job: JobsState }) => {
+  console.log({ job });
   return (
     <Card className={styles.main_card_container}>
       {/* Card Top Section */}
