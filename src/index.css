@@ -112,6 +112,7 @@ input:focus-visible {
   gap: 24px;
   grid-template-columns: repeat(3, 1fr);
   padding: 0 16px;
+  margin-bottom: 32px;
 }
 
 /* Media query for smaller screens */
