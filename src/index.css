@@ -106,3 +106,26 @@ input:hover {
 input:focus-visible {
   outline: 0;
 }
+
+.jobs_list_container {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 16px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 900px) {
+  .jobs_list_container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 16px;
+  }
+}
+
+/* Media query for mobile */
+@media (max-width: 552px) {
+  .jobs_list_container {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+}

@@ -10,9 +10,11 @@ function App() {
   return (
     <main className="main_container">
       <JobFilters />
-      {getSampleJdJSON().map((job) => (
-        <JobCard key={job?.jdUid} job={job} />
-      ))}
+      <div className="jobs_list_container">
+        {getSampleJdJSON().map((job) => (
+          <JobCard key={job?.jdUid} job={job} />
+        ))}
+      </div>
     </main>
   );
 }
