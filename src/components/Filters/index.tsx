@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Select from 'react-select';
 import { Input as BaseInput } from '@mui/base/Input';
-import { JOB_FILTER_LIST } from '../../constants';
+import { JOB_FILTER_LIST } from '../../utils/constants';
 import styles from './filters.module.css';
 import {
   setMinExperience,

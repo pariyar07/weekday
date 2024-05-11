@@ -1,7 +1,7 @@
 import { Box, Card } from '@mui/material';
 import styles from './job-card.module.css';
 import CustomButton from '../ui/CustomButton';
-import { AVATAR_EXAMPLE_ARRAY } from '../../constants';
+import { AVATAR_EXAMPLE_ARRAY } from '../../utils/constants';
 import AboutUs from './AboutUs';
 
 const JobCard = ({ job }: { job: JobsState }) => {
