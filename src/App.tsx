@@ -20,7 +20,7 @@ function App() {
     jobRole,
     // techStack,
     location,
-    workCulture,
+    // workCulture,
     companyName,
   } = useSelector((state) => (state as { jobs: JobsInitialState }).jobs);
 
@@ -66,13 +66,13 @@ function App() {
       }
 
       // Check if workCulture matches
-      if (
-        workCulture &&
-        workCulture.length &&
-        !workCulture.includes(job.location.toLowerCase())
-      ) {
-        return false;
-      }
+      // if (
+      //   workCulture &&
+      //   workCulture.length &&
+      //   !workCulture.includes(job.location.toLowerCase())
+      // ) {
+      //   return false;
+      // }
 
       // Check if companyName matches
       if (
@@ -122,6 +122,8 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [jobs, visibleJobs]);
+
+  console.log(jobs, visibleJobs);
 
   return (
     <main className="main_container">
