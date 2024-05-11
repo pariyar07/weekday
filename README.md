@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+# Weekday
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Brief description of what the project does and its purpose.
 
-Currently, two official plugins are available:
+### Tech Stack:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TypeScript
+ReactJS
+Redux Toolkit
+Material-UI
+Fonts:
+Lexend font has been used to replicate the design.
 
-## Expanding the ESLint configuration
+### Folder Structure:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+weekday/
+│
+├── src/
+│ ├── components/ # Contains React components
+│ ├── redux/ # Contains Redux logic files
+│ ├── utils/ # Contains static data and other utility functions
+│ ├── sampleJDJSON/ # Contains sample JSON files
+│ └── ... # Other required ReactJS files
+│
+├── public/
+│ └── images/ # Contains images used in the project
+│
+└── types/
+└── global.d.ts # Contains TypeScript global types/interfaces
 
-- Configure the top-level `parserOptions` property like this:
+### Usage:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Clone the repository.
+Navigate to the project directory: cd /weekday.
+Install dependencies: npm install.
+Start the development server: npm run dev.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+[Live link](https://weekday-black.vercel.app/)
