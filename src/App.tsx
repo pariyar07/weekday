@@ -5,6 +5,8 @@ import JobCard from './components/JobCard';
 import { getSampleJdJSON } from './utils/sampleJobsData.js';
 import { useSelector } from 'react-redux';
 import NoData from '../public/no_data.svg';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -123,21 +125,23 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [jobs, visibleJobs]);
 
-  console.log(jobs, visibleJobs);
-
   return (
     <main className="main_container">
       <JobFilters />
       <>
         {jobs?.length ? (
-          <div className="jobs_list_container">
-            {visibleJobs.map((job) => (
-              <JobCard key={job?.jdUid} job={job} />
-            ))}
+          <>
+            <div className="jobs_list_container">
+              {visibleJobs.map((job) => (
+                <JobCard key={job?.jdUid} job={job} />
+              ))}
+            </div>
             {isLoadingMore && (
-              <div className="load_more_text">Loading more...</div>
+              <Box sx={{ display: 'flex' }}>
+                <CircularProgress />
+              </Box>
             )}
-          </div>
+          </>
         ) : (
           <div className="no_jobs_container">
             <p className="no_jobs_text">No Jobs Found!</p>
