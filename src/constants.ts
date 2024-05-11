@@ -9,7 +9,7 @@ export const AVATAR_EXAMPLE_ARRAY = [
   },
 ];
 
-const minExp_OPTIONS = [
+const MIN_EXP_OPTIONS = [
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
@@ -23,16 +23,15 @@ const minExp_OPTIONS = [
 ];
 
 const BASE_PAY_OPTIONS = [
-  { value: '10', label: '10' },
   { value: '20', label: '20' },
-  { value: '30', label: '30' },
-  { value: '40', label: '40' },
   { value: '50', label: '50' },
-  { value: '60', label: '60' },
-  { value: '70', label: '70' },
-  { value: '80', label: '80' },
-  { value: '90', label: '90' },
+  { value: '75', label: '75' },
   { value: '100', label: '100' },
+  { value: '125', label: '125' },
+  { value: '150', label: '150' },
+  { value: '175', label: '175' },
+  { value: '200', label: '200' },
+  { value: '250', label: '250' },
 ];
 
 const ROLE_OPTIONS = [
@@ -80,7 +79,7 @@ export const JOB_FILTER_LIST = [
     label: 'Experience',
     isMulti: false,
     placeholder: 'Experience',
-    options: minExp_OPTIONS,
+    options: MIN_EXP_OPTIONS,
     isSelect: true,
   },
   {
