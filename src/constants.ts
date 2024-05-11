@@ -9,7 +9,7 @@ export const AVATAR_EXAMPLE_ARRAY = [
   },
 ];
 
-const MIN_EXPERIENCE_OPTIONS = [
+const minExp_OPTIONS = [
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
@@ -22,29 +22,81 @@ const MIN_EXPERIENCE_OPTIONS = [
   { value: '10', label: '10' },
 ];
 
+const BASE_PAY_OPTIONS = [
+  { value: '10', label: '10' },
+  { value: '20', label: '20' },
+  { value: '30', label: '30' },
+  { value: '40', label: '40' },
+  { value: '50', label: '50' },
+  { value: '60', label: '60' },
+  { value: '70', label: '70' },
+  { value: '80', label: '80' },
+  { value: '90', label: '90' },
+  { value: '100', label: '100' },
+];
+
+const ROLE_OPTIONS = [
+  { value: 'frontend', label: 'Frontend' },
+  { value: 'backend', label: 'Backend' },
+  { value: 'ios', label: 'IOS' },
+  { value: 'android', label: 'Android' },
+  { value: 'tech lead', label: 'Tech Lead' },
+];
+
+const TECH_STACK_OPTIONS = [
+  { value: 'javascript', label: 'JavaScript' },
+  { value: 'python', label: 'Python' },
+  { value: 'java', label: 'Java' },
+  { value: 'swift', label: 'Swift' },
+  { value: 'kotlin', label: 'Kotlin' },
+  { value: 'typescript', label: 'TypeScript' },
+  { value: 'csharp', label: 'C#' },
+  { value: 'ruby', label: 'Ruby' },
+  { value: 'php', label: 'PHP' },
+  { value: 'go', label: 'Go' },
+  { value: 'rust', label: 'Rust' },
+  { value: 'scala', label: 'Scala' },
+  { value: 'dart', label: 'Dart' },
+  { value: 'swift', label: 'Swift' },
+  { value: 'objective-c', label: 'Objective-C' },
+];
+
+const LOCATION_OPTIONS = [
+  { value: 'remote', label: 'Remote' },
+  { value: 'mumbai', label: 'Mumbai' },
+  { value: 'delhi_ncr', label: 'Delhi NCR' },
+  { value: 'chennai', label: 'Chennai' },
+  { value: 'bangalore', label: 'Bangalore' },
+];
+
+const WORK_CULTURE_OPTIONS = [
+  { value: 'remote', label: 'Remote' },
+  { value: 'on-site', label: 'Onsite' },
+];
+
 export const JOB_FILTER_LIST = [
   {
-    id: 'min_experience',
+    id: 'minExp',
     label: 'Experience',
-    isMulti: true,
+    isMulti: false,
     placeholder: 'Experience',
-    options: MIN_EXPERIENCE_OPTIONS,
+    options: minExp_OPTIONS,
     isSelect: true,
   },
   {
-    id: 'base_pay',
+    id: 'minJdSalary',
     label: 'Base Pay',
-    isMulti: true,
+    isMulti: false,
     placeholder: 'Base Pay',
-    options: [],
+    options: BASE_PAY_OPTIONS,
     isSelect: true,
   },
   {
-    id: 'role',
+    id: 'jobRole',
     label: 'Role',
     isMulti: true,
     placeholder: 'Role',
-    options: [],
+    options: ROLE_OPTIONS,
     isSelect: true,
   },
   {
@@ -52,7 +104,7 @@ export const JOB_FILTER_LIST = [
     label: 'Tech Stack',
     isMulti: true,
     placeholder: 'Tech Stack',
-    options: [],
+    options: TECH_STACK_OPTIONS,
     isSelect: true,
   },
   {
@@ -60,7 +112,7 @@ export const JOB_FILTER_LIST = [
     label: 'Location',
     isMulti: true,
     placeholder: 'Location',
-    options: [],
+    options: LOCATION_OPTIONS,
     isSelect: true,
   },
   {
@@ -68,15 +120,14 @@ export const JOB_FILTER_LIST = [
     label: 'Work Culture',
     isMulti: true,
     placeholder: 'Work Culture',
-    options: [],
+    options: WORK_CULTURE_OPTIONS,
     isSelect: true,
   },
   {
-    id: 'company_name',
+    id: 'companyName',
     label: 'Company Name',
     isMulti: true,
     placeholder: 'Company Name',
-    options: [],
     isSelect: false,
   },
 ];

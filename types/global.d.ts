@@ -13,6 +13,16 @@ declare global {
     companyName: string;
     logoUrl: string;
   };
+
+  type JobsInitialState = {
+    minExperience: string;
+    minBasePay: string;
+    jobRole: string[];
+    techStack: string[];
+    location: string[];
+    workCulture: string[];
+    companyName: string;
+  };
 }
 
-export { JobsState };
+export { JobsState, JobsInitialState };

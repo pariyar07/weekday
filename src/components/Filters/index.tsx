@@ -1,37 +1,56 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import Select from 'react-select';
 import { Input as BaseInput } from '@mui/base/Input';
 import { JOB_FILTER_LIST } from '../../constants';
 import styles from './filters.module.css';
+import {
+  setMinExperience,
+  setMinBasePay,
+  setRole,
+  setTechStack,
+  setLocation,
+  setWorkCulture,
+  setCompanyName,
+} from '../../redux/store/jobs/jobsSlice';
+import { useDispatch } from 'react-redux';
 
 const JobFilters = () => {
-  const [selectedFilters, setSelectedFilters] = useState({
-    min_experience: '',
-    min_base_pay: '',
-    role: [],
-    tech_stack: [],
-    location: [],
-    work_culture: [],
-    company_name: '',
-  });
+  const dispatch = useDispatch();
   const timeoutRef = useRef(null);
-
-  const handleUpdateFilters = (value, filter) => {
-    setSelectedFilters((prev) => ({
-      ...prev,
-      [filter]: value,
-    }));
-  };
 
   const handleInputChange = (value) => {
     clearTimeout(timeoutRef.current);
-
     timeoutRef.current = setTimeout(() => {
-      setSelectedFilters((prev) => ({
-        ...prev,
-        company_name: value,
-      }));
+      dispatch(setCompanyName(value));
     }, 1000);
+  };
+
+  const handleUpdateFilters = (value, filter) => {
+    switch (filter) {
+      case 'minExp':
+        dispatch(setMinExperience(value));
+        break;
+      case 'minJdSalary':
+        dispatch(setMinBasePay(value));
+        break;
+      case 'jobRole':
+        dispatch(setRole(value));
+        break;
+      case 'tech_stack':
+        dispatch(setTechStack(value));
+        break;
+      case 'location':
+        dispatch(setLocation(value));
+        break;
+      case 'work_culture':
+        dispatch(setWorkCulture(value));
+        break;
+      case 'companyName':
+        dispatch(setCompanyName(value));
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -48,7 +67,6 @@ const JobFilters = () => {
                 options={filter?.options}
                 className={styles.select_input}
                 onChange={(value) => handleUpdateFilters(value, filter?.id)}
-                value={selectedFilters[filter?.id]}
               />
             ) : (
               <BaseInput

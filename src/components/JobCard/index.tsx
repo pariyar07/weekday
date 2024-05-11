@@ -28,7 +28,7 @@ const JobCard = ({ job }: { job: JobsState }) => {
         <div className={styles.company_info_container}>
           <img src={logoUrl} width={48} height={48} alt="Weekday" />
           <div className={styles.company_text_info_container}>
-            <h3 className={styles.company_name}>{companyName}</h3>
+            <h3 className={styles.companyName}>{companyName}</h3>
             <h2 className={styles.company_job_position}>{jobRole}</h2>
             <p className={styles.company_location}>{location}</p>
           </div>

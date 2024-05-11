@@ -3,6 +3,7 @@ import JobFilters from './components/Filters';
 import JobCard from './components/JobCard';
 // import { useJobsQuery } from './redux/api/jobsApi';
 import { getSampleJdJSON } from './utils/sampleJobsData.js';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -11,6 +12,26 @@ function App() {
 
   // const { data, isError, isLoading, isSuccess } = useJobsQuery('');
   // console.log(data?.files['Sample JD Data']?.content);
+
+  const {
+    minExperience,
+    minBasePay,
+    jobRole,
+    techStack,
+    location,
+    workCulture,
+    companyName,
+  } = useSelector((state) => (state as { jobs: JobsInitialState }).jobs);
+
+  console.log({
+    minExperience,
+    minBasePay,
+    jobRole,
+    techStack,
+    location,
+    workCulture,
+    companyName,
+  });
 
   useEffect(() => {
     const fetchJobs = async () => {
