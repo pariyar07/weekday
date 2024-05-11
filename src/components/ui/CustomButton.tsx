@@ -6,6 +6,7 @@ interface CustomButtonProps extends Omit<ButtonProps, 'type'> {
   type?: 'primary' | 'secondary' | 'link';
   icon?: React.ReactNode;
   avatars?: { alt: string; src: string }[];
+  link?: string;
 }
 
 const getButtonStyles = (type: CustomButtonProps['type']) => {
@@ -47,23 +48,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   text,
   icon,
   avatars = [],
+  link,
   ...restProps
 }) => {
-  return (
-    <Button
-      variant="contained"
-      color="inherit"
-      sx={{
-        fontWeight: '500',
-        padding: '8px 18px',
-        border: 0,
-        boxShadow: 'none',
-        textTransform: 'none',
-        borderRadius: '8px',
-        ...getButtonStyles(type),
-      }}
-      {...restProps}
-    >
+  const buttonContent = (
+    <>
       {icon && icon}
       {avatars.length > 0 && (
         <AvatarGroup max={2} sx={{ marginRight: '8px' }}>
@@ -78,6 +67,33 @@ const CustomButton: React.FC<CustomButtonProps> = ({
         </AvatarGroup>
       )}
       {text}
+    </>
+  );
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (link) {
+      event.preventDefault();
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  return (
+    <Button
+      variant="contained"
+      color="inherit"
+      sx={{
+        fontWeight: '500',
+        padding: '8px 18px',
+        border: 0,
+        boxShadow: 'none',
+        textTransform: 'none',
+        borderRadius: '8px',
+        ...getButtonStyles(type),
+      }}
+      onClick={handleClick}
+      {...restProps}
+    >
+      {buttonContent}
     </Button>
   );
 };

@@ -3,44 +3,13 @@ import CustomButton from '../ui/CustomButton';
 import styles from './job-card.module.css';
 import { Modal } from '@mui/material';
 
-const AboutUs = () => {
+const AboutUs = ({ job }: { job: JobsState }) => {
   const [showFullDetails, setShowFullDetails] = useState(false);
+
+  const { jobDetailsFromCompany } = job;
 
   const showDetails = () => setShowFullDetails(true);
   const hideDetails = () => setShowFullDetails(false);
-
-  const description = `Your task is to create a candidate application platform that allows
-  users to view job listings, filter jobs based on various criteria, and
-  implement infinite scroll for a seamless browsing experience. The
-  platform should provide a user-friendly interface for viewing and
-  applying to jobs. For the UI / Designs please install this extension
-  where you can see the job card and filters. Please note that the
-  behavior should be infinite scroll and not a load more button. Please
-  note that for scope of this assignment you only need to consider the
-  Search jobs section only. You are not required to implement the logic
-  / UI for post apply.
-  
-  Your task is to create a candidate application platform that allows
-  users to view job listings, filter jobs based on various criteria, and
-  implement infinite scroll for a seamless browsing experience. The
-  platform should provide a user-friendly interface for viewing and
-  applying to jobs. For the UI / Designs please install this extension
-  where you can see the job card and filters. Please note that the
-  behavior should be infinite scroll and not a load more button. Please
-  note that for scope of this assignment you only need to consider the
-  Search jobs section only. You are not required to implement the logic
-  / UI for post apply.
-  
-  Your task is to create a candidate application platform that allows
-  users to view job listings, filter jobs based on various criteria, and
-  implement infinite scroll for a seamless browsing experience. The
-  platform should provide a user-friendly interface for viewing and
-  applying to jobs. For the UI / Designs please install this extension
-  where you can see the job card and filters. Please note that the
-  behavior should be infinite scroll and not a load more button. Please
-  note that for scope of this assignment you only need to consider the
-  Search jobs section only. You are not required to implement the logic
-  / UI for post apply.`;
 
   return (
     <>
@@ -50,7 +19,9 @@ const AboutUs = () => {
           <p className={styles.about_us_details_header}>
             <b>About Us</b>
           </p>
-          <p className={styles.about_us_details_description}>{description}</p>
+          <p className={styles.about_us_details_description}>
+            {jobDetailsFromCompany}
+          </p>
           <CustomButton
             type="link"
             text="View Job"
@@ -72,7 +43,7 @@ const AboutUs = () => {
               <b>About Us</b>
             </p>
             <p className={styles.about_us_details_description_modal}>
-              {description}
+              {jobDetailsFromCompany}
             </p>
           </div>
         </div>
