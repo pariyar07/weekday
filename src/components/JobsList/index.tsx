@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { getSampleJdJSON } from '../../utils/sampleJobsData';
 
@@ -6,6 +6,8 @@ const JobsList = ({ children }) => {
   const [jobs, setJobs] = useState([]);
   const [visibleJobs, setVisibleJobs] = useState([]);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+  const timeoutRef = useRef(null);
 
   const {
     minExperience,
@@ -101,7 +103,8 @@ const JobsList = ({ children }) => {
       !isLoadingMore
     ) {
       setIsLoadingMore(true);
-      setTimeout(() => {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
         setVisibleJobs((prevVisibleJobs) => [
           ...prevVisibleJobs,
           ...jobs.slice(prevVisibleJobs.length, prevVisibleJobs.length + 12),
